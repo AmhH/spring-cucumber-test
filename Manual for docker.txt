@@ -1,0 +1,8 @@
+First: build the service to get the latest jar (mvn clean install)
+Then: build the docker to create the images for the update jar
+	docker build -f Dockerfile -t <imageName> . (don't forget the dot)
+	docker images
+Then: run the image using:
+	docker run -p 8080:8080 <imagesName>
+Validate from POSTMAN using the docker ip address
+	http://192.168.99.100:8080/allEmployees
