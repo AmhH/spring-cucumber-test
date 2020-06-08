@@ -12,20 +12,15 @@ repositories {
 	mavenCentral()
 }
 
-rootProject.name = 'spring-cucumber-test'
+//rootProject.name = 'spring-cucumber-test'
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	}
-	// https://mvnrepository.com/artifact/info.cukes/cucumber-jvm
-	compile group: 'info.cukes', name: 'cucumber-jvm', version: '1.2.5', ext: 'pom'
-// https://mvnrepository.com/artifact/info.cukes/cucumber-junit
-	testCompile group: 'info.cukes', name: 'cucumber-junit', version: '1.2.6', ext: 'pom'
-// https://mvnrepository.com/artifact/info.cukes/cucumber-spring
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	compile group: 'info.cukes', name: 'cucumber-jvm', version: '1.2.5'
+	testCompile group: 'info.cukes', name: 'cucumber-junit', version: '1.2.6'
 	testCompile group: 'info.cukes', name: 'cucumber-spring', version: '1.2.5'
-
+	testCompile "com.github.tomakehurst:wiremock-jre8:2.26.3"
 }
 
 test {
